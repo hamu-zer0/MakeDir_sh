@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# 現在の年と月を取得
+YEAR=$(date +%Y)
+MONTH=$(date +%m)
+
+# ディレクトリ名の作成
+DIR_NAME="${YEAR}_${MONTH}"
+
+# ディレクトリを作成
+mkdir -p "$DIR_NAME"
+
+# サブディレクトリを作成
+SUB_DIRS=("Reversing" "Misc" "Stego" "Crypto" "Web" "Forensics" "OSINT" "Pwn" "Mobile" "Hardware" "Blockchain" "GamePwn")
+
+# サブディレクトリを作成
+for dir in "${SUB_DIRS[@]}"; do
+    mkdir -p "${DIR_NAME}/${dir}"
+done
+
+echo "ディレクトリが作成されました: ${DIR_NAME}"
